@@ -1,9 +1,11 @@
---CREATE TABLE users
---    ( id number(10) NOT NULL,
---      name varchar2(40) NOT NULL,
---     country varchar2(10),
---     PRIMARY KEY(id)
---    );
+CREATE TABLE users
+   ( id number(10) NOT NULL,
+     name varchar2(40) NOT NULL,
+    country varchar2(10),
+    PRIMARY KEY(id)
+   );
+
+   
 INSERT
     ALL INTO users (id, name, country)
 VALUES
