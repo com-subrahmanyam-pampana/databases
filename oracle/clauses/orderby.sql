@@ -16,6 +16,8 @@ CREATE TABLE users
     country varchar2(10),
     PRIMARY KEY(id)
    );
+
+   
 INSERT
     ALL INTO users (id, name, country)
 VALUES
