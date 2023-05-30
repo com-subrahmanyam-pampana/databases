@@ -56,4 +56,4 @@ FROM
    SELECT * FROM salary;
 
 
-   SELECT * FROM employee CROSS JOIN salary where ;
+   SELECT employee.emp_id,employee.full_name,salary.amount FROM employee INNER JOIN salary ON salary.emp_id=employee.emp_id ;
