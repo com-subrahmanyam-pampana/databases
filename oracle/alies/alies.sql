@@ -1,9 +1,3 @@
-/*
-Join query combine rows from 2 or more tables.
-Rows are combined based on the related column between them
-*/
-
-/*Query:Need order id ,name of emp and salary */
 CREATE TABLE employee (
     emp_id number(15) NOT NULL,
     full_name varchar2(20) NOT NULL,
@@ -16,10 +10,6 @@ CREATE TABLE salary (
     amount number(20) NOT NULL,
     PRIMARY KEY(order_id)
 );
-
-/*Note that both employee and the salary table contains 
-the emp_id */
-
 INSERT
     ALL INTO employee (emp_id, full_name)
 VALUES
@@ -55,23 +45,18 @@ SELECT
     *
 FROM
     dual;
-   
-
-/*Natural Join*/
-SELECT * FROM employee NATURAL JOIN salary;
-
-/*CROSS Join or Cartition*/
-SELECT * FROM salary CROSS  JOIN employee;
-
-/*Inner join*/
-SELECT * FROM salary INNER JOIN employee ON salary.emp_id = employee.emp_id
-
-/*LEFT Left Outer join*/
-SELECT * FROM employee LEFT JOIN salary ON salary.emp_id = employee.emp_id;
-
-/*LEFT Rigth Outer join*/
-SELECT * FROM employee RIGHT JOIN salary ON salary.emp_id = employee.emp_id;
 
 
-/*Full Full Outer join*/
-SELECT * FROM employee  FULL  JOIN salary ON salary.emp_id = employee.emp_id;
+/*Alies of cloumn names*/
+
+  SELECT  EMP_ID AS EMPLOYEE_NO FROM employee;
+  /*IOn the output table instead of EMP_ID label ,label will be 
+  printed as EMPLOYEE_NO
+   */
+
+/*Alies of Tables names*/
+
+  SELECT  E.EMP_ID  FROM employee E  INNER JOIN salary S ON E.EMP_ID=S.EMP_ID ;
+  /*Here E is the alies for employee table 
+  and S is the alies for the salary table
+  */
